@@ -1,7 +1,7 @@
 defmodule ESI.Mixfile do
   use Mix.Project
 
-  @version "0.1.2"
+  @version "0.2.1"
 
   def project do
     [
