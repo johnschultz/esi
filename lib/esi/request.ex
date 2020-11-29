@@ -43,7 +43,7 @@ defmodule ESI.Request do
     %{req | opts: Map.merge(req.opts, Map.new(opts))}
   end
 
-  @base "https://esi.tech.ccp.is/latest"
+  @base "https://esi.evetech.net/latest"
   @doc """
   Run a request.
   """
@@ -99,10 +99,10 @@ defmodule ESI.Request do
            recv_timout: 30_000
          ]) do
       {:ok, code, _headers, body} when code in 200..299 ->
-        Poison.decode(body)
+        Jason.decode(body)
 
       {:ok, 404, _, body} ->
-        case Poison.decode(body) do
+        case Jason.decode(body) do
           {:ok, %{"error" => eve_error}} ->
             {:error, eve_error}
 
@@ -144,7 +144,7 @@ defmodule ESI.Request do
   @spec encode_options(:body | :query, opts :: map) :: String.t()
   defp encode_options(:body, opts) when map_size(opts) == 0, do: ""
   # In the body, only support one option and just encode the value
-  defp encode_options(:body, opts), do: Poison.encode!(opts |> Map.values() |> hd)
+  defp encode_options(:body, opts), do: Jason.encode!(opts |> Map.values() |> hd)
   defp encode_options(:query, opts) when map_size(opts) == 0, do: ""
   defp encode_options(:query, opts), do: "?" <> URI.encode_query(opts)
 

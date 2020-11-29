@@ -18,6 +18,6 @@ defmodule Mix.Tasks.Esi.Generate do
   defp swagger() do
     Path.join([:code.priv_dir(:esi), "swagger.json"])
     |> File.read!()
-    |> Poison.decode!()
+    |> Jason.decode!()
   end
 end

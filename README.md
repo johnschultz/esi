@@ -30,7 +30,7 @@ ESI.API.version()
 ```
 
 API functions are available in modules under `ESI.API`. The module grouping is close to,
-but not the same as, [the ESI site](https://esi.tech.ccp.is/latest), staying more in-line
+but not the same as, [the ESI site](https://esi.evetech.net/latest), staying more in-line
 with the URL used for the specific function.
 
 > Note: Module organization may change for the v1.0 release.

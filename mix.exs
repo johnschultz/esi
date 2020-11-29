@@ -46,9 +46,9 @@ defmodule ESI.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:hackney, "~> 1.10"},
-      {:poison, "~> 3.1"},
-      {:ex_doc, "~> 0.18.1", only: :dev, runtime: false}
+      {:hackney, "~> 1.16"},
+      {:jason, "~> 1.2"},
+      {:ex_doc, "~> 0.23.0", only: :dev, runtime: false}
     ]
   end
 
