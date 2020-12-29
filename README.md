@@ -2,6 +2,14 @@
 
 An Elixir client for Eve Online's Swagger Interface (ESI).
 
+
+## Fork Maintainer Note
+This package is my attempt at updating [bruce/esi](https://github.com/bruce/esi)
+to use the latest EVE Swagger Interface (currently 1.7.2 as of this writing). I've
+cherry-picked commits from [marcinruszkiewicz/esi](https://github.com/marcinruszkiewicz/esi/commit/4dfb91df60cfa069e04ba3a2687e1dad088abc5b)
+and [/bmartin2015/esi](https://github.com/bmartin2015/esi/commit/75a1e2e24c53631dddb6055dad93900e3fbdae2c)
+to accomplish this. Thanks to them for their work.
+
 ## Installation
 
 Install from [Hex.pm](https://hex.pm/packages/esi):
@@ -26,11 +34,11 @@ You can see what version of the ESI Swagger Specification was used by running:
 
 ``` elixir
 ESI.API.version()
-# => "0.7.5"
+# => "1.7.2"
 ```
 
 API functions are available in modules under `ESI.API`. The module grouping is close to,
-but not the same as, [the ESI site](https://esi.evetech.net/latest), staying more in-line
+but not the same as, [the ESI site](https://esi.evetech.net/ui/?version=_latest), staying more in-line
 with the URL used for the specific function.
 
 > Note: Module organization may change for the v1.0 release.
